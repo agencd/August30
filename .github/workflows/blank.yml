@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
     inputs:
       name: string
-      description: What woukld you like to say ?
+      description: 'What woukld you like to say ?'
       required: true
 
 jobs:
