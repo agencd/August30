@@ -1,8 +1,8 @@
 name: My First Automation
 
 on:
-  # push:
-  #   branches: [ "main" ]
+   push:
+     path: ./my_first_directory
   # pull_request:
   #   branches: [ "main" ]
   workflow_dispatch:
@@ -21,11 +21,9 @@ jobs:
 
       - name: Run a one-line script
         run: echo this is for barney
-        if: inputs.customer == 'barney'
 
       - name: Run a multi-line script
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
           echo ${{ secrets.MY_FIRST_SECRET }}
-        if: inputs.customer != 'barney'  
