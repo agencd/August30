@@ -2,9 +2,8 @@ name: My First Automation
 
 on:
    push:
-     path: ./my_first_directory
-  # pull_request:
-  #   branches: [ "main" ]
+     paths: ./my_first_directory
+
   workflow_dispatch:
     inputs:
       customer:
