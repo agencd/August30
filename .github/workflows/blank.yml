@@ -8,7 +8,7 @@ on:
 
   workflow_dispatch:
     inputs:
-      input: string
+      name: string
       description: What woukld you like to say ?
       required: true
 
