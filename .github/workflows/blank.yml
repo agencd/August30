@@ -6,6 +6,12 @@ on:
   pull_request:
     branches: [ "main" ]
 
+  workflow_dispatch:
+    inputs:
+      input: string
+      description: What woukld you like to say ?
+      required: true
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -14,7 +20,7 @@ jobs:
       - uses: actions/checkout@v3
 
       - name: Run a one-line script
-        run: echo Hello, world!
+        run: echo this is my first input ${{ inputs.input }}
 
       - name: Run a multi-line script
         run: |
