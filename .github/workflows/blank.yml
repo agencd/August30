@@ -3,7 +3,7 @@ name: My First Automation
 on:
    push:
      paths: 
-      - 'my_first_directory/*'
+      - 'docs/**'
 
   workflow_dispatch:
     inputs:
