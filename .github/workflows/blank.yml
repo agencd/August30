@@ -2,7 +2,7 @@ name: My First Automation
 
 on:
   push:
-    paths-ignore:
+    paths:
       - 'docs/**'
   workflow_dispatch:
     inputs:
