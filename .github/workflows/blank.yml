@@ -25,4 +25,4 @@ jobs:
 
       - name: Run a multi-line script
         run: |
-          echo this is the build id ${{ $build_id.outputs.build_id }}
+          echo this is the build id ${{ build_id.outputs.build_id }}
