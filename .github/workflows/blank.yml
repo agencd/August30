@@ -2,6 +2,8 @@ name: My First Automation
 
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
     inputs:
       customer:
         description: 'What is the customer ?'
