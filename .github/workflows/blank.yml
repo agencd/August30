@@ -1,9 +1,6 @@
 name: My First Automation
 
 on:
-  push:
-    paths:
-      - 'docs/**'
   workflow_dispatch:
     inputs:
       customer:
@@ -14,15 +11,15 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    outputs:
+      build_id: ${{ steps.build_step.outputs.build_id }}
 
     steps:
       - uses: actions/checkout@v3
 
       - name: Run a one-line script
-        run: echo this is for ${{ inputs.customer }}
+        run: echo "build_id=$BUILD_ID" >> $GITHUB_OUTPUT
 
       - name: Run a multi-line script
         run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
-          echo ${{ secrets.MY_FIRST_SECRET }}
+          echo this is the build id ${{ steps.build_step.outputs.build_id }}
