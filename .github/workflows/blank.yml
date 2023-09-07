@@ -19,5 +19,5 @@ jobs:
 
       - name: Matrix Example
         run: |
-          echo "terraform plan -var-file environments/${{ github.events.inputs.customer || 'barney' }}/variables.tfvars"
+          echo "terraform plan -var-file environments/${{ github.events.inputs.customer }}/variables.tfvars"
           echo "3rd line"
