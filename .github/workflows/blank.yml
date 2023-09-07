@@ -20,5 +20,5 @@ jobs:
       - uses: actions/checkout@v3
 
       - name: Matrix Example
-        run: echo "this is for ${{ matrix.customers }}"
+        run: echo "terraform plan -var-file environments/${{ matrix.customers }}/variables.tfvars"
 
