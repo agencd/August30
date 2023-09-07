@@ -13,15 +13,12 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
+    strategy:
+      matrix:
+        customers: [fred, barney, wilma, bambam ]
     steps:
       - uses: actions/checkout@v3
 
-      - name: Run a one-line script
-        run: echo "this is for ${{ github.event.inputs.customer }}"
+      - name: Matrix Example
+        run: echo "this is for ${{ matrix.customers }}"
 
-      - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
-          echo ${{ secrets.MY_FIRST_SECRET }}
