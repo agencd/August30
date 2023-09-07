@@ -13,13 +13,11 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        customers: [fred, barney, wilma, bambam ]
+
     steps:
       - uses: actions/checkout@v3
 
       - name: Matrix Example
         run: |
-          echo "terraform plan -var-file environments/${{ matrix.customers }}/variables.tfvars"
+          echo "terraform plan -var-file environments/${{ github.events.inputs.customer || 'barney' }}/variables.tfvars"
           echo "3rd line"
