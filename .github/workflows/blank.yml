@@ -22,4 +22,4 @@ jobs:
       - name: Matrix Example
         run: |
           echo "terraform plan -var-file environments/${{ matrix.customers }}/variables.tfvars"
-          echo "second line"
+          echo "3rd line"
